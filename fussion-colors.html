@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fussion Colors</title>
+<meta name="description" content="Fussion Colors: colorantes, pigmentos, aditivos, resinas y artículos para plástico. Igualación de tonos personalizada, asesoría y envíos a todo México. Solicita tu cotización.">
+<meta name="keywords" content="colorantes para plástico, pigmentos para plástico, aditivos para plástico, resinas para plástico, igualación de colores para plástico, colorantes industriales México">
+<meta property="og:title" content="Fussion Colors | Colores para plásticos de alto desempeño">
+<meta property="og:description" content="Colores, aditivos, resinas y artículos para plástico. Igualamos el tono que requieres.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Fussion Colors","description":"Colores, aditivos, resinas y artículos para plástico. Igualamos el tono que requieres.","email":"colorsucofc@gmail.com","telephone":["+52 55 2521 2830","+52 55 2405 6630","+52 56 1737 4470","+52 55 8997 5427"],"areaServed":"MX","address":[{"@type":"PostalAddress","addressLocality":"Atenco","addressRegion":"Estado de México","addressCountry":"MX"},{"@type":"PostalAddress","addressLocality":"Querétaro","addressRegion":"Querétaro","addressCountry":"MX"},{"@type":"PostalAddress","addressLocality":"Chimalhuacán","addressRegion":"Estado de México","addressCountry":"MX"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: bandas alternadas tinta / papel, como una carta de color industrial; el color puro aparece solo donde vende. */
+:root{
+  --ink:#0B0C0E; --ink-2:#14161A; --ink-3:#1E2127; --line-dk:#2A2E36;
+  --paper:#F3F4F6; --white:#FFFFFF; --mute:#5E6470; --mute-dk:#9AA1AD;
+  --red:#E1251B; --red-dk:#B81B13; --blue:#1F4FE0; --blue-lt:#5B82FF;
+  --spectrum:linear-gradient(90deg,#E1251B 0%,#FF6A1A 18%,#FFC21A 34%,#19B36B 52%,#1F4FE0 72%,#7A3CE0 100%);
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1200px; --r:14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--ink);color:var(--ink);font:400 16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+img,canvas,svg{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--blue-lt);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{scroll-margin-top:76px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:6px;border-radius:3px;background:var(--spectrum)}
+.h2{font-size:clamp(32px,4.6vw,56px);line-height:1.02;font-weight:800;font-stretch:115%}
+.lead{font-size:clamp(17px,1.6vw,19px);line-height:1.6;max-width:60ch}
+
+/* Botones */
+.btn{--bg:var(--red);--fg:#fff;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:0;background:var(--bg);color:var(--fg);font:600 15px/1 var(--f-body);text-decoration:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(225,37,27,.7)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.blue{--bg:var(--blue)}.btn.blue:hover{box-shadow:0 10px 24px -10px rgba(31,79,224,.7)}
+.btn.ghost{--bg:transparent;--fg:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #fff}
+.btn.ghost-dk{--bg:transparent;--fg:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(11,12,14,.25)}
+.btn.ghost-dk:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.wa{--bg:#1FA855}.btn.wa:hover{box-shadow:0 10px 24px -10px rgba(31,168,85,.7)}
+
+/* Header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(11,12,14,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);color:#fff}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.logo-slot{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.logo-mark{width:36px;height:36px;border-radius:50%;background:conic-gradient(from 200deg,#E1251B,#1F4FE0,#0B0C0E 62%,#E1251B);box-shadow:inset 0 0 0 7px var(--ink),0 0 0 1px rgba(255,255,255,.12)}
+.logo-word{font:800 19px/1 var(--f-display);font-stretch:118%;letter-spacing:.01em}
+.logo-word span{color:var(--red)}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{padding:10px 12px;border-radius:8px;text-decoration:none;font-size:14.5px;color:#D5D9E0;transition:color .2s,background .2s}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.hdr .btn{padding:11px 18px;font-size:14px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:10px;border:0;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:#fff;border-radius:2px;position:relative;transition:transform .25s,background .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.hdr.open .burger span{background:transparent}
+.hdr.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.hdr.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.mnav{display:none}
+@media (max-width:980px){
+  .nav,.hdr .wrap>.btn{display:none}
+  .burger{display:inline-flex}
+  .hdr.open .mnav{display:flex}
+  .mnav{flex-direction:column;gap:2px;padding:8px max(20px,env(safe-area-inset-right,0px)) 22px max(20px,env(safe-area-inset-left,0px));background:var(--ink)}
+  .mnav a{padding:14px 4px;font:600 20px/1.1 var(--f-display);font-stretch:110%;text-decoration:none;color:#fff}
+  .mnav .btn{margin-top:12px;align-self:flex-start}
+}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero canvas#heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,12,14,.97) 0%,rgba(11,12,14,.86) 36%,rgba(11,12,14,.25) 70%,rgba(11,12,14,.1) 100%),linear-gradient(0deg,rgba(11,12,14,.9) 0%,rgba(11,12,14,0) 30%)}
+.hero .wrap{padding-block:clamp(72px,11vw,148px) 40px}
+.hero h1{font-size:clamp(46px,8.4vw,112px);line-height:.92;font-weight:850;font-stretch:122%;max-width:11ch;margin:22px 0 26px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font:600 clamp(18px,1.9vw,22px)/1.35 var(--f-body);max-width:34ch;color:#fff}
+.hero .lead{color:#B9BFC9;margin-top:14px;max-width:52ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.chart{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:clamp(56px,8vw,96px);max-width:760px}
+.chip{border-radius:10px;overflow:hidden;background:var(--ink-2);box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.chip i{display:block;height:44px}
+.chip b{display:block;padding:8px 10px;font:500 10.5px/1.3 var(--f-mono);letter-spacing:.06em;color:#A8AFBA;text-transform:uppercase}
+.chip.match i{background:var(--spectrum)}
+@media (max-width:620px){.chart{grid-template-columns:repeat(3,1fr)}}
+
+/* Nosotros */
+.about{background:var(--white)}
+.about .wrap{padding-block:clamp(72px,10vw,128px);display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,6vw,88px);align-items:center}
+.about .txt{display:grid;gap:22px;min-width:0}
+.about p{color:#2E333B;font-size:17.5px;max-width:58ch}
+.quote{margin-top:10px;padding:22px 24px;border-radius:var(--r);background:var(--paper);font:700 clamp(20px,2.2vw,26px)/1.2 var(--f-display);font-stretch:108%}
+.quote small{display:block;margin-top:10px;font:500 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.about .vis{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--ink);max-width:100%}
+.about .vis canvas{width:100%;height:100%}
+.tag{position:absolute;left:14px;bottom:14px;font:500 10.5px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#C9CED6;background:rgba(11,12,14,.65);padding:7px 9px;border-radius:6px;backdrop-filter:blur(6px)}
+.about .badge{position:absolute;right:14px;top:14px;background:#fff;color:var(--ink);border-radius:12px;padding:12px 14px;font:700 14px/1.2 var(--f-display);font-stretch:110%;max-width:200px}
+.about .badge span{display:block;font:500 10.5px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+@media (max-width:880px){.about .wrap{grid-template-columns:1fr}.about .vis{aspect-ratio:16/11}}
+
+/* Productos */
+.products{background:var(--paper)}
+.products .wrap{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.sec-head .lead{color:var(--mute);max-width:46ch}
+.grid-p{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:980px){.grid-p{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid-p{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(11,12,14,.04),0 12px 30px -22px rgba(11,12,14,.35);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(11,12,14,.04),0 22px 44px -24px rgba(11,12,14,.45)}
+.card .img{position:relative;aspect-ratio:16/10;background:var(--ink);overflow:hidden}
+.card .img canvas{width:100%;height:100%;transition:transform .6s ease}
+.card:hover .img canvas{transform:scale(1.04)}
+.card .code{position:absolute;right:12px;top:12px;font:500 10.5px/1 var(--f-mono);letter-spacing:.08em;color:#fff;background:rgba(255,255,255,.12);padding:6px 8px;border-radius:6px;backdrop-filter:blur(6px)}
+.card .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h3{font-size:22px;font-weight:800;font-stretch:112%;line-height:1.1}
+.card p{color:var(--mute);font-size:15px}
+.card ul{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:8px}
+.card li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#2E333B}
+.card li::before{content:"";flex:none;width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--blue)}
+.card .btn{margin-top:auto;align-self:flex-start;padding:12px 18px;font-size:14px}
+.card .act{margin-top:auto;padding-top:10px}
+.card.feature{background:var(--ink);color:#fff}
+.card.feature p,.card.feature li{color:#B9BFC9}
+.card.feature li::before{background:var(--red)}
+.card.feature .img::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:var(--spectrum)}
+
+/* Igualación */
+.match{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.match .wrap{padding-block:clamp(72px,10vw,128px)}
+.match-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.match .lead{color:#B9BFC9;margin-top:22px}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+.points div{background:var(--ink-2);border-radius:12px;padding:16px;font-weight:500;font-size:15px;display:flex;gap:12px;align-items:center}
+.points svg{width:22px;height:22px;flex:none;color:var(--blue-lt)}
+.lab{background:var(--ink-2);border-radius:22px;padding:18px;display:grid;gap:16px;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.lab-vis{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:#08090B}
+.lab-vis canvas{width:100%;height:100%}
+.lab-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.picker{position:relative;width:56px;height:56px;border-radius:14px;overflow:hidden;flex:none;box-shadow:0 0 0 2px rgba(255,255,255,.18)}
+.picker input{position:absolute;inset:-8px;width:calc(100% + 16px);height:calc(100% + 16px);border:0;padding:0;cursor:pointer;background:none}
+.read{font:500 13px/1.6 var(--f-mono);color:#C9CED6;flex:1;min-width:150px}
+.read b{color:#fff;font-weight:500;font-size:15px}
+.presets{display:flex;gap:8px;flex-wrap:wrap}
+.presets button{width:30px;height:30px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18);transition:transform .2s}
+.presets button:hover{transform:scale(1.12)}
+.lab small{color:var(--mute-dk);font-size:12.5px}
+.steps{margin-top:clamp(56px,8vw,88px);display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{border-radius:16px;padding:24px;background:linear-gradient(180deg,var(--ink-3),var(--ink-2))}
+.step b{display:block;font:500 12px/1 var(--f-mono);letter-spacing:.12em;color:var(--red);margin-bottom:16px}
+.step h3{font-size:20px;font-stretch:110%;margin-bottom:8px}
+.step p{color:#AEB5C0;font-size:15px}
+.serv{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--ink-2);border-radius:16px;padding:18px 22px}
+.serv ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.serv li{font-size:13.5px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);color:#D5D9E0}
+@media (max-width:880px){.match-top{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+@media (max-width:480px){.points{grid-template-columns:1fr}}
+
+/* Beneficios */
+.benefits{background:var(--white)}
+.benefits .wrap{padding-block:clamp(72px,10vw,128px)}
+.grid-b{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,48px) clamp(24px,4vw,56px)}
+@media (max-width:880px){.grid-b{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.grid-b{grid-template-columns:1fr}}
+.ben{display:grid;gap:12px;align-content:start}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--paper);display:grid;place-items:center;color:var(--ink);transition:background .25s,color .25s}
+.ben:hover .ico{background:var(--ink);color:#fff}
+.ico svg{width:24px;height:24px}
+.ben h3{font-size:21px;font-stretch:110%;line-height:1.15}
+.ben p{color:var(--mute);font-size:15.5px;max-width:36ch}
+.slogan{margin-top:clamp(56px,8vw,88px);border-radius:22px;padding:clamp(28px,5vw,56px);background:var(--ink);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
+.slogan::before{content:"";position:absolute;inset:0 auto 0 0;width:8px;background:var(--spectrum);background-size:100% 100%}
+.slogan p{font:800 clamp(26px,3.6vw,44px)/1.05 var(--f-display);font-stretch:118%;max-width:20ch}
+
+/* Cobertura */
+.cover{background:var(--blue);color:#fff;overflow:hidden}
+.cover .wrap{padding-block:clamp(72px,10vw,120px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.cover .h2{font-size:clamp(34px,5vw,64px)}
+.cover p{color:#DCE5FF;margin-top:20px;font-size:18px;max-width:40ch}
+.cover ul{list-style:none;padding:0;margin:28px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+.cover li{font-size:14px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.14)}
+.net{width:100%;height:auto;overflow:visible}
+.net .route{stroke-dasharray:4 7;animation:flow 2.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-44}}
+.net .pulse{transform-origin:center;transform-box:fill-box;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@media (max-width:880px){.cover .wrap{grid-template-columns:1fr}}
+
+/* Ubicaciones */
+.locs{background:var(--paper)}
+.locs .wrap{padding-block:clamp(72px,10vw,128px)}
+.grid-l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:880px){.grid-l{grid-template-columns:1fr}}
+.loc{background:#fff;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px;box-shadow:0 12px 30px -24px rgba(11,12,14,.35)}
+.loc .pin{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.loc .pin svg{width:22px;height:22px}
+.loc h3{font-size:28px;font-stretch:115%;font-weight:800}
+.loc .zone{font:500 13px/1.4 var(--f-mono);letter-spacing:.04em;color:var(--mute);text-transform:uppercase}
+.loc a{margin-top:auto;font-weight:600;font-size:14.5px;color:var(--blue);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.loc a:hover{text-decoration:underline}
+.loc a svg{width:16px;height:16px}
+
+/* Contacto */
+.contact{background:var(--ink);color:#fff}
+.contact .wrap{padding-block:clamp(72px,10vw,128px);display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,64px);align-items:start}
+@media (max-width:980px){.contact .wrap{grid-template-columns:1fr}}
+.contact .h2{font-size:clamp(32px,4.4vw,52px)}
+.contact .lead{color:#B9BFC9;margin-top:20px}
+.cblock{margin-top:32px;display:grid;gap:10px}
+.cline{display:flex;align-items:center;gap:12px;background:var(--ink-2);border-radius:12px;padding:12px 12px 12px 16px;min-width:0}
+.cline svg{width:18px;height:18px;flex:none;color:var(--mute-dk)}
+.cline a{flex:1;min-width:0;font:500 16px/1.2 var(--f-mono);text-decoration:none;color:#fff;overflow-wrap:anywhere;user-select:all}
+.cline a:hover{color:var(--blue-lt)}
+.copy{border:0;background:rgba(255,255,255,.07);color:#D5D9E0;font:500 12px/1 var(--f-body);padding:9px 11px;border-radius:8px;cursor:pointer;flex:none}
+.copy:hover{background:rgba(255,255,255,.14)}
+.copy.ok{background:#1FA855;color:#fff}
+.phones{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.phones{grid-template-columns:1fr}}
+.cbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.fbnote{margin-top:14px;font-size:13.5px;color:var(--mute-dk)}
+
+.form{background:#fff;color:var(--ink);border-radius:22px;padding:clamp(22px,3.5vw,36px)}
+.form h3{font-size:clamp(24px,2.6vw,30px);font-stretch:112%;font-weight:800}
+.form .intro{color:var(--mute);margin:8px 0 24px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fgrid .full{grid-column:1/-1}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-size:13px;font-weight:600;color:#2E333B}
+.field label i{font-style:normal;color:var(--red)}
+.field input,.field select,.field textarea{width:100%;font:400 15.5px/1.4 var(--f-body);color:var(--ink);background:var(--paper);border:1.5px solid transparent;border-radius:10px;padding:12px 14px;transition:border-color .2s,background .2s;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235E6470' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+.field.err input,.field.err select,.field.err textarea{border-color:var(--red)}
+.field .msg{font-size:12.5px;color:var(--red);min-height:0}
+.form .submit{margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.form .submit small{color:var(--mute);font-size:13px;max-width:34ch}
+.ready{margin-top:20px;background:var(--paper);border-radius:14px;padding:20px;display:grid;gap:14px}
+.ready[hidden]{display:none}
+.ready h4{margin:0;font:700 18px/1.2 var(--f-display);font-stretch:110%}
+.ready p{color:var(--mute);font-size:14.5px}
+.ready .row{display:flex;gap:10px;flex-wrap:wrap}
+.ready .btn{padding:12px 18px;font-size:14px}
+
+/* Footer */
+.ftr{background:#060708;color:#C9CED6}
+.ftr .wrap{padding-block:72px 40px}
+.fgrid4{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+@media (max-width:880px){.fgrid4{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fgrid4{grid-template-columns:1fr}}
+.ftr h4{margin:0 0 16px;font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:#7E8592}
+.ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14.5px}
+.ftr a{text-decoration:none}
+.ftr a:hover{color:#fff}
+.ftr .about-f p{margin-top:16px;font-size:14.5px;max-width:34ch;color:#9AA1AD}
+.final{margin-top:64px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.final p{font:800 clamp(22px,3vw,36px)/1.1 var(--f-display);font-stretch:118%;color:#fff;max-width:26ch}
+.final p span{background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+.final small{font-size:13px;color:#6B7280}
+
+/* WhatsApp selector */
+.sheet{position:fixed;inset:0;z-index:80;background:rgba(6,7,8,.6);backdrop-filter:blur(4px);display:grid;place-items:center;padding:20px max(20px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+.sheet .box{background:#fff;color:var(--ink);border-radius:20px;padding:26px;width:min(420px,100%);display:grid;gap:14px}
+.sheet h4{margin:0;font:800 22px/1.15 var(--f-display);font-stretch:112%}
+.sheet p{color:var(--mute);font-size:14.5px}
+.sheet .nums{display:grid;gap:8px}
+.sheet .nums a{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:12px;background:var(--paper);text-decoration:none;font:500 16px/1 var(--f-mono)}
+.sheet .nums a:hover{background:#E6F6EC}
+.sheet .nums a span{font:600 13px/1 var(--f-body);color:#1FA855}
+.sheet .close{justify-self:end;border:0;background:none;font:600 14px/1 var(--f-body);color:var(--mute);cursor:pointer;padding:8px}
+.sheet[hidden]{display:none}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <!-- LOGOTIPO: reemplazar .logo-mark y .logo-word por <img src="logo-fussion-colors.svg" alt="Fussion Colors" height="40"> -->
+    <a class="logo-slot" href="#inicio" aria-label="Fussion Colors, ir al inicio">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-word">FUSSION <span>COLORS</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#servicios">Servicios</a><a href="#ubicaciones">Ubicaciones</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="#cotizacion">Solicitar cotización</a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Menú móvil">
+    <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#servicios">Servicios</a><a href="#ubicaciones">Ubicaciones</a><a href="#contacto">Contacto</a>
+    <a class="btn" href="#cotizacion" style="font:600 15px/1 var(--f-body)">Solicitar cotización</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio" aria-labelledby="h1">
+  <canvas id="heroCanvas" role="img" aria-label="Pellets de plástico en rojo, azul, negro y blanco con acentos multicolor"></canvas>
+  <div class="wrap">
+    <span class="eyebrow">Colores para plásticos de alto desempeño</span>
+    <h1 id="h1">Color que <em>transforma</em> la industria.</h1>
+    <p class="sub">Soluciones de coloración, pigmentos y aditivos para la industria del plástico.</p>
+    <p class="lead">Desarrollamos soluciones de color que se adaptan a las necesidades de tu producto. Encuentra calidad, rendimiento y asesoría especializada en Fussion Colors.</p>
+    <div class="ctas">
+      <a class="btn ghost" href="#productos">Explorar productos</a>
+      <a class="btn" href="#cotizacion">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="chart" aria-label="Carta de color de Fussion Colors">
+      <div class="chip"><i style="background:#E1251B"></i><b>Rojo</b></div>
+      <div class="chip"><i style="background:#1F4FE0"></i><b>Azul</b></div>
+      <div class="chip"><i style="background:#23262C"></i><b>Negro</b></div>
+      <div class="chip"><i style="background:#EEF0F2"></i><b>Blanco</b></div>
+      <div class="chip"><i style="background:linear-gradient(135deg,#FFC21A,#FF6A1A)"></i><b>Especiales</b></div>
+      <div class="chip match"><i></i><b>Tu tono</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="about" id="nosotros" aria-labelledby="h-about">
+  <div class="wrap">
+    <div class="txt">
+      <span class="eyebrow">Nosotros</span>
+      <h2 class="h2" id="h-about">Somos Fussion Colors.</h2>
+      <p>Somos una empresa especializada en colorantes, pigmentos, aditivos, resinas y artículos para plástico. Ofrecemos soluciones para empresas que buscan mejorar la apariencia, calidad y desempeño visual de sus productos.</p>
+      <p>Nuestro compromiso es brindar atención personalizada, productos de calidad y soluciones de color adaptadas a las necesidades de cada cliente.</p>
+      <div class="quote">Calidad que se ve, experiencia que respalda.<small>Fussion Colors</small></div>
+    </div>
+    <div class="vis">
+      <canvas data-render="powder" data-seed="7" role="img" aria-label="Pigmentos industriales en polvo rojo, azul y amarillo"></canvas>
+      <div class="badge"><span>Igualación</span>Igualamos el tono que requieres.</div>
+      <span class="tag">Imagen ilustrativa</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products" id="productos" aria-labelledby="h-prod">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Catálogo</span><h2 class="h2" id="h-prod" style="margin-top:16px">Productos para<br>la industria del plástico.</h2></div>
+      <p class="lead">Colores, aditivos, resinas y artículos para plástico. Cuéntanos qué necesitas y te asesoramos para elegir la mejor opción.</p>
+    </div>
+    <div class="grid-p">
+      <article class="card">
+        <div class="img"><canvas data-render="pellets" data-palette="red" data-seed="11" role="img" aria-label="Pellets de plástico coloreados en tonos rojos"></canvas><span class="code">FC · 01</span></div>
+        <div class="body">
+          <h3>Colorantes para plásticos</h3>
+          <p>Color para que tus piezas plásticas tengan el tono y la presencia que buscas.</p>
+          <ul><li>Colores intensos y duraderos</li><li>Mayor impacto visual de tus productos</li></ul>
+          <div class="act"><button class="btn blue" data-product="Colorantes para plásticos">Solicitar información</button></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><canvas data-render="powder" data-seed="23" role="img" aria-label="Pigmentos industriales en polvo"></canvas><span class="code">FC · 02</span></div>
+        <div class="body">
+          <h3>Pigmentos</h3>
+          <p>Pigmentos industriales para la coloración de materiales plásticos.</p>
+          <ul><li>Pigmentos estables y uniformes</li><li>Máxima cobertura y rendimiento</li></ul>
+          <div class="act"><button class="btn blue" data-product="Pigmentos industriales">Solicitar información</button></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><canvas data-render="pellets" data-palette="white" data-seed="31" role="img" aria-label="Pellets blancos y grises representativos de aditivos"></canvas><span class="code">FC · 03</span></div>
+        <div class="body">
+          <h3>Aditivos</h3>
+          <p>Aditivos para plásticos que complementan tus procesos de producción.</p>
+          <ul><li>Asesoría para elegir el adecuado</li><li>Calidad garantizada</li></ul>
+          <div class="act"><button class="btn blue" data-product="Aditivos para plásticos">Solicitar información</button></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><canvas data-render="pellets" data-palette="clear" data-seed="47" role="img" aria-label="Resina en pellets translúcidos"></canvas><span class="code">FC · 04</span></div>
+        <div class="body">
+          <h3>Resinas</h3>
+          <p>Resinas para la fabricación de productos plásticos.</p>
+          <ul><li>Orientación según tu aplicación</li><li>Envíos a todo México</li></ul>
+          <div class="act"><button class="btn blue" data-product="Resinas">Solicitar información</button></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><canvas data-render="pellets" data-palette="mix" data-seed="59" role="img" aria-label="Pellets plásticos de colores variados"></canvas><span class="code">FC · 05</span></div>
+        <div class="body">
+          <h3>Artículos para plástico</h3>
+          <p>Artículos complementarios para la industria del plástico.</p>
+          <ul><li>Atención personalizada</li><li>Envíos rápidos y confiables</li></ul>
+          <div class="act"><button class="btn blue" data-product="Artículos para plástico">Solicitar información</button></div>
+        </div>
+      </article>
+      <article class="card feature">
+        <div class="img"><canvas data-render="pellets" data-palette="spectrum" data-seed="71" role="img" aria-label="Gama de pellets en colores personalizados"></canvas><span class="code">A TU MEDIDA</span></div>
+        <div class="body">
+          <h3>Soluciones de coloración personalizada</h3>
+          <p>Desarrollamos el color según los requerimientos de tu producto.</p>
+          <ul><li>Igualación de tonos personalizados</li><li>Soluciones para diferentes tipos de plástico</li></ul>
+          <div class="act"><a class="btn" href="#servicios">Conocer el servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- IGUALACIÓN / SERVICIOS -->
+<section class="match" id="servicios" aria-labelledby="h-match">
+  <div class="wrap">
+    <div class="match-top">
+      <div>
+        <span class="eyebrow">Igualación de tonos</span>
+        <h2 class="h2" id="h-match" style="margin-top:18px">El color que necesitas, lo hacemos posible.</h2>
+        <p class="lead">En Fussion Colors ofrecemos soluciones de igualación de tonos para ayudarte a conseguir el color que buscas en tus productos plásticos.</p>
+        <div class="points">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>Igualación personalizada</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H8l-4 3z"/></svg>Asesoría especializada</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h6"/></svg>Atención a requerimientos específicos</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>Soluciones adaptadas a cada cliente</div>
+        </div>
+      </div>
+      <div class="lab" aria-label="Elige un tono de referencia">
+        <div class="lab-vis"><canvas id="labCanvas" role="img" aria-label="Pellets en el tono seleccionado"></canvas><span class="tag">Vista de referencia</span></div>
+        <div class="lab-row">
+          <label class="picker" title="Elegir tono"><input type="color" id="tone" value="#1F4FE0" aria-label="Elegir tono de referencia"></label>
+          <div class="read" aria-live="polite"><b id="hex">#1F4FE0</b><br><span id="rgb">RGB 31 · 79 · 224</span></div>
+          <div class="presets" aria-label="Tonos sugeridos">
+            <button style="background:#E1251B" data-c="#E1251B" aria-label="Rojo"></button>
+            <button style="background:#1F4FE0" data-c="#1F4FE0" aria-label="Azul"></button>
+            <button style="background:#19B36B" data-c="#19B36B" aria-label="Verde"></button>
+            <button style="background:#FFC21A" data-c="#FFC21A" aria-label="Amarillo"></button>
+            <button style="background:#7A3CE0" data-c="#7A3CE0" aria-label="Violeta"></button>
+          </div>
+        </div>
+        <button class="btn" id="matchBtn" style="justify-self:start">Solicitar igualación de color <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <small>La vista en pantalla es solo una referencia. Para igualar un tono con precisión compártenos tu muestra física.</small>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><b>PASO 1</b><h3>Comparte tu referencia</h3><p>Envíanos tu muestra o referencia del color que buscas.</p></div>
+      <div class="step"><b>PASO 2</b><h3>Cuéntanos tu proyecto</h3><p>Indica el tipo de plástico, la aplicación y la cantidad aproximada.</p></div>
+      <div class="step"><b>PASO 3</b><h3>Recibe asesoría</h3><p>Nuestro equipo te orienta y te envía tu cotización.</p></div>
+    </div>
+    <div class="serv">
+      <ul>
+        <li>Igualación de tonos personalizados</li><li>Asesoría personalizada</li><li>Coloración para diferentes tipos de plástico</li><li>Desarrollo de color según tus requerimientos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="benefits" aria-labelledby="h-ben">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Por qué Fussion Colors</span><h2 class="h2" id="h-ben" style="margin-top:16px">Calidad garantizada<br>en cada tono.</h2></div>
+    </div>
+    <div class="grid-b">
+      <div class="ben"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div><h3>Colores intensos y duraderos</h3><p>Soluciones de color diseñadas para destacar visualmente.</p></div>
+      <div class="ben"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div><h3>Pigmentos estables y uniformes</h3><p>Productos enfocados en mantener una apariencia consistente.</p></div>
+      <div class="ben"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17l5-5 4 3 7-8"/><path d="M15 7h5v5"/></svg></div><h3>Alto rendimiento</h3><p>Soluciones orientadas a mejorar la cobertura y el rendimiento.</p></div>
+      <div class="ben"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div><h3>Asesoría personalizada</h3><p>Atención enfocada en las necesidades de cada cliente.</p></div>
+      <div class="ben"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div><h3>Envíos nacionales</h3><p>Comercialización y envíos a diferentes partes de México.</p></div>
+      <div class="ben"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="10" r="6"/><path d="M9 15l-2 6 5-2 5 2-2-6"/><path d="M9.5 10l2 2 3-3.5"/></svg></div><h3>Calidad garantizada</h3><p>Compromiso comercial con la calidad de los productos.</p></div>
+    </div>
+    <div class="slogan">
+      <p>Más color, mayor impacto, más ventas.</p>
+      <a class="btn" href="#cotizacion">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- COBERTURA -->
+<section class="cover" aria-labelledby="h-cover">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:#DCE5FF">Cobertura nacional</span>
+      <h2 class="h2" id="h-cover" style="margin-top:18px">Fussion Colors llega a todo México.</h2>
+      <p>Contamos con atención comercial y envíos a diferentes regiones del país.</p>
+      <ul><li>Envíos a todo México</li><li>Envíos rápidos y confiables</li><li>Atención comercial</li></ul>
+    </div>
+    <svg class="net" viewBox="0 0 520 380" role="img" aria-label="Red de envíos desde Querétaro, Atenco y Chimalhuacán hacia el resto del país">
+      <g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.6">
+        <path class="route" d="M200 170 C150 110 90 80 30 60"/>
+        <path class="route" d="M200 170 C230 100 260 60 300 20"/>
+        <path class="route" d="M290 230 C360 190 420 160 500 140"/>
+        <path class="route" d="M290 230 C340 280 390 320 470 350"/>
+        <path class="route" d="M290 230 C250 290 200 330 120 360"/>
+        <path class="route" d="M200 170 C140 190 80 220 20 250"/>
+        <path d="M200 170 C235 195 260 210 280 222" stroke="#fff" stroke-width="2"/>
+      </g>
+      <g fill="#fff" opacity=".55">
+        <circle cx="30" cy="60" r="4"/><circle cx="300" cy="20" r="4"/><circle cx="500" cy="140" r="4"/><circle cx="470" cy="350" r="4"/><circle cx="120" cy="360" r="4"/><circle cx="20" cy="250" r="4"/>
+      </g>
+      <circle class="pulse" cx="200" cy="170" r="10" fill="#fff" opacity=".5"/>
+      <circle class="pulse" cx="290" cy="230" r="10" fill="#fff" opacity=".5" style="animation-delay:.8s"/>
+      <circle cx="200" cy="170" r="8" fill="#E1251B" stroke="#fff" stroke-width="3"/>
+      <circle cx="282" cy="224" r="7" fill="#fff"/>
+      <circle cx="298" cy="238" r="7" fill="#fff"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#fff" letter-spacing="1">
+        <text x="140" y="150">QUERÉTARO</text>
+        <text x="312" y="222">ATENCO</text>
+        <text x="312" y="252">CHIMALHUACÁN</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- UBICACIONES -->
+<section class="locs" id="ubicaciones" aria-labelledby="h-locs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Ubicaciones</span><h2 class="h2" id="h-locs" style="margin-top:16px">Encuéntranos.</h2></div>
+      <p class="lead">Tres puntos de atención para servirte. Contáctanos para confirmar la dirección y el horario antes de tu visita.</p>
+    </div>
+    <div class="grid-l">
+      <!-- Al tener direcciones exactas, reemplazar el enlace de búsqueda por el enlace o mapa de Google Maps -->
+      <article class="loc">
+        <div class="pin" style="background:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Atenco</h3><p class="zone">Estado de México</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Fussion+Colors+Atenco+Estado+de+M%C3%A9xico" target="_blank" rel="noopener">Ver en Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="loc">
+        <div class="pin" style="background:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Querétaro</h3><p class="zone">Zona Carrillo Puerto</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Fussion+Colors+Carrillo+Puerto+Quer%C3%A9taro" target="_blank" rel="noopener">Ver en Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="loc">
+        <div class="pin" style="background:var(--ink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3>Chimalhuacán</h3><p class="zone">Colonia 4 de Febrero</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Fussion+Colors+Colonia+4+de+Febrero+Chimalhuac%C3%A1n" target="_blank" rel="noopener">Ver en Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO + COTIZACIÓN -->
+<section class="contact" id="contacto" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Contacto comercial</span>
+      <h2 class="h2" id="h-contact" style="margin-top:18px">¿Buscas una solución de color para tu producto?</h2>
+      <p class="lead">Contáctanos y recibe asesoría personalizada. Nuestro equipo puede ayudarte a encontrar la solución que necesitas.</p>
+      <div class="cblock">
+        <div class="phones" id="phones"></div>
+        <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:colorsucofc@gmail.com">colorsucofc@gmail.com</a><button class="copy" data-copy="colorsucofc@gmail.com">Copiar</button></div>
+      </div>
+      <div class="cbtns">
+        <a class="btn" href="tel:+525525212830"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Llamar</a>
+        <a class="btn blue" href="mailto:colorsucofc@gmail.com?subject=Solicitud%20de%20informaci%C3%B3n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Enviar correo</a>
+        <button class="btn wa" data-wa=""><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.7 11.7 0 0 1-4.6-4.1c-.3-.5-1.1-1.6-1.1-3s.7-2.1 1-2.4.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.2.2-.3.3-.1.6a8.6 8.6 0 0 0 4.2 3.7c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3s.1.6-.1 1.3z"/></svg>WhatsApp</button>
+        <!-- FACEBOOK: reemplazar por la URL oficial de la página cuando se confirme -->
+        <a class="btn ghost" href="https://www.facebook.com/search/top?q=Fussion%20Colors" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg>Facebook</a>
+      </div>
+      <p class="fbnote">Síguenos en Facebook como Fussion Colors, donde ya somos más de 500 seguidores.</p>
+    </div>
+
+    <form class="form" id="cotizacion" novalidate aria-labelledby="h-form">
+      <h3 id="h-form">Solicita tu cotización</h3>
+      <p class="intro">Entre más detalles nos compartas, más precisa será nuestra propuesta.</p>
+      <div class="fgrid">
+        <div class="field"><label for="f-nombre">Nombre <i>*</i></label><input id="f-nombre" name="nombre" autocomplete="name" required><span class="msg"></span></div>
+        <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+        <div class="field"><label for="f-tel">Teléfono <i>*</i></label><input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required><span class="msg"></span></div>
+        <div class="field"><label for="f-mail">Correo electrónico</label><input id="f-mail" name="correo" type="email" autocomplete="email"><span class="msg"></span></div>
+        <div class="field"><label for="f-prod">Producto de interés <i>*</i></label>
+          <select id="f-prod" name="producto" required>
+            <option value="">Selecciona una opción</option>
+            <option>Colorantes para plásticos</option><option>Pigmentos industriales</option><option>Aditivos para plásticos</option><option>Resinas</option><option>Artículos para plástico</option><option>Soluciones de coloración personalizada</option><option>Igualación de color</option><option>Asesoría personalizada</option>
+          </select><span class="msg"></span></div>
+        <div class="field"><label for="f-plast">Tipo de plástico</label><input id="f-plast" name="plastico" placeholder="El material de tu producto"></div>
+        <div class="field"><label for="f-color">Color requerido</label><input id="f-color" name="color" placeholder="Nombre, código o referencia"></div>
+        <div class="field"><label for="f-cant">Cantidad aproximada</label><input id="f-cant" name="cantidad" placeholder="Ej. 25 kg"></div>
+        <div class="field full"><label for="f-desc">Descripción del requerimiento</label><textarea id="f-desc" name="descripcion" placeholder="Cuéntanos sobre tu producto, la aplicación y lo que necesitas lograr."></textarea></div>
+      </div>
+      <div class="submit">
+        <button class="btn" type="submit">Solicitar cotización <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <small>Tu solicitud se envía por WhatsApp o correo. Tú eliges el medio en el siguiente paso.</small>
+      </div>
+      <div class="ready" id="ready" hidden aria-live="polite">
+        <h4>Tu solicitud está lista para enviarse</h4>
+        <p>Elige cómo enviarla. Se abrirá WhatsApp o tu correo con todos los datos ya escritos; solo confirma el envío.</p>
+        <div class="row">
+          <button type="button" class="btn wa" id="sendWa">Enviar por WhatsApp</button>
+          <a class="btn blue" id="sendMail" href="#">Enviar por correo</a>
+          <button type="button" class="btn ghost-dk" id="copyReq">Copiar solicitud</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="fgrid4">
+      <div class="about-f">
+        <a class="logo-slot" href="#inicio" aria-label="Fussion Colors"><span class="logo-mark" aria-hidden="true"></span><span class="logo-word" style="color:#fff">FUSSION <span>COLORS</span></span></a>
+        <p>Colores, aditivos, resinas y artículos para plástico. Igualamos el tono que requieres.</p>
+      </div>
+      <div><h4>Navegación</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#productos">Productos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#ubicaciones">Ubicaciones</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+      <div><h4>Productos</h4><ul><li>Colorantes para plásticos</li><li>Pigmentos industriales</li><li>Aditivos para plásticos</li><li>Resinas</li><li>Artículos para plástico</li><li>Coloración personalizada</li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="tel:+525525212830">55 2521 2830</a></li><li><a href="tel:+525524056630">55 2405 6630</a></li><li><a href="tel:+525617374470">56 1737 4470</a></li><li><a href="tel:+525589975427">55 8997 5427</a></li><li><a href="mailto:colorsucofc@gmail.com">colorsucofc@gmail.com</a></li><li>Facebook: Fussion Colors</li><li>Atenco · Querétaro · Chimalhuacán</li></ul></div>
+    </div>
+    <div class="final">
+      <p>Fussion Colors. <span>Innovación y color para un mundo de posibilidades.</span></p>
+      <small>© <span id="yr"></span> Fussion Colors. Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-t">
+  <div class="box">
+    <h4 id="sheet-t">Escríbenos por WhatsApp</h4>
+    <p>Elige el número de tu preferencia.</p>
+    <div class="nums" id="nums"></div>
+    <button class="close" id="sheetClose">Cerrar</button>
+  </div>
+</div>
+
+<script>
+/* CONFIGURACIÓN: validar con el cliente qué números tienen WhatsApp.
+   Si se confirma uno solo, ponlo en WHATSAPP_PRINCIPAL (10 dígitos) y el botón irá directo a ese número. */
+const CONFIG = {
+  WHATSAPP_PRINCIPAL: "",
+  telefonos: ["55 2521 2830","55 2405 6630","56 1737 4470","55 8997 5427"],
+  correo: "colorsucofc@gmail.com"
+};
+const digits = s => s.replace(/\D/g,"");
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* Menú móvil */
+const hdr = document.getElementById("hdr"), burger = document.getElementById("burger");
+burger.addEventListener("click", () => { const o = hdr.classList.toggle("open"); burger.setAttribute("aria-expanded", o); burger.setAttribute("aria-label", o ? "Cerrar menú" : "Abrir menú"); });
+document.querySelectorAll("#mnav a").forEach(a => a.addEventListener("click", () => { hdr.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+
+/* Teléfonos */
+const phones = document.getElementById("phones");
+CONFIG.telefonos.forEach(t => {
+  phones.insertAdjacentHTML("beforeend", `<div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+52${digits(t)}">${t}</a><button class="copy" data-copy="${t}">Copiar</button></div>`);
+});
+
+/* Copiar */
+async function copyText(text, btn){
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch(e) {
+    try { const ta = document.createElement("textarea"); ta.value = text; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch(_){}
+  }
+  if (btn){ const old = btn.textContent; btn.textContent = ok ? "Copiado" : "Selecciona y copia"; btn.classList.toggle("ok", ok); setTimeout(() => { btn.textContent = old; btn.classList.remove("ok"); }, 1800); }
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-copy]"); if (b) copyText(b.dataset.copy, b); });
+
+/* WhatsApp */
+const sheet = document.getElementById("sheet"), nums = document.getElementById("nums");
+let waText = "Hola, me interesa recibir información de Fussion Colors.";
+function openWa(text){
+  waText = text || "Hola, me interesa recibir información de Fussion Colors.";
+  const q = encodeURIComponent(waText);
+  if (CONFIG.WHATSAPP_PRINCIPAL){ window.location.href = `https://wa.me/52${digits(CONFIG.WHATSAPP_PRINCIPAL)}?text=${q}`; return; }
+  nums.innerHTML = CONFIG.telefonos.map(t => `<a href="https://wa.me/52${digits(t)}?text=${q}" target="_blank" rel="noopener">${t}<span>Abrir chat</span></a>`).join("");
+  sheet.hidden = false; nums.querySelector("a").focus();
+}
+document.querySelectorAll("[data-wa]").forEach(b => b.addEventListener("click", () => openWa()));
+document.getElementById("sheetClose").addEventListener("click", () => sheet.hidden = true);
+sheet.addEventListener("click", e => { if (e.target === sheet) sheet.hidden = true; });
+document.addEventListener("keydown", e => { if (e.key === "Escape") sheet.hidden = true; });
+
+/* Prellenado desde tarjetas */
+const fProd = document.getElementById("f-prod"), fColor = document.getElementById("f-color");
+function goForm(){ document.getElementById("cotizacion").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block:"start"}); setTimeout(() => document.getElementById("f-nombre").focus({preventScroll:true}), 500); }
+document.querySelectorAll("[data-product]").forEach(b => b.addEventListener("click", () => { fProd.value = b.dataset.product; goForm(); }));
+
+/* Formulario */
+const form = document.getElementById("cotizacion"), ready = document.getElementById("ready");
+let reqText = "";
+function setErr(id, msg){ const f = document.getElementById(id).closest(".field"); f.classList.toggle("err", !!msg); const m = f.querySelector(".msg"); if (m) m.textContent = msg || ""; }
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  let bad = null;
+  if (!v("f-nombre")) { setErr("f-nombre","Escribe tu nombre."); bad = bad || "f-nombre"; } else setErr("f-nombre");
+  if (digits(v("f-tel")).length < 10) { setErr("f-tel","Escribe un teléfono de 10 dígitos."); bad = bad || "f-tel"; } else setErr("f-tel");
+  if (v("f-mail") && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("f-mail"))) { setErr("f-mail","Revisa el formato del correo."); bad = bad || "f-mail"; } else setErr("f-mail");
+  if (!v("f-prod")) { setErr("f-prod","Elige el producto que te interesa."); bad = bad || "f-prod"; } else setErr("f-prod");
+  if (bad) { document.getElementById(bad).focus(); ready.hidden = true; return; }
+  const lines = [
+    "Solicitud de cotización · Fussion Colors",
+    `Nombre: ${v("f-nombre")}`,
+    v("f-empresa") && `Empresa: ${v("f-empresa")}`,
+    `Teléfono: ${v("f-tel")}`,
+    v("f-mail") && `Correo: ${v("f-mail")}`,
+    `Producto de interés: ${v("f-prod")}`,
+    v("f-plast") && `Tipo de plástico: ${v("f-plast")}`,
+    v("f-color") && `Color requerido: ${v("f-color")}`,
+    v("f-cant") && `Cantidad aproximada: ${v("f-cant")}`,
+    v("f-desc") && `Requerimiento: ${v("f-desc")}`
+  ].filter(Boolean);
+  reqText = lines.join("\n");
+  document.getElementById("sendMail").href = `mailto:${CONFIG.correo}?subject=${encodeURIComponent("Solicitud de cotización: " + v("f-prod"))}&body=${encodeURIComponent(reqText)}`;
+  ready.hidden = false; ready.scrollIntoView({block:"nearest", behavior:"smooth"});
+});
+document.getElementById("sendWa").addEventListener("click", () => openWa(reqText));
+document.getElementById("copyReq").addEventListener("click", e => copyText(reqText, e.currentTarget));
+
+/* Render de pellets y pigmentos (imágenes ilustrativas, sustituibles por fotografía oficial) */
+function rng(seed){ return function(){ seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const PAL = {
+  hero: [["#E1251B",30],["#1F4FE0",30],["#23262C",14],["#EEF0F2",14],["#FFC21A",4],["#19B36B",3],["#FF6A1A",3],["#7A3CE0",2]],
+  red: [["#E1251B",50],["#B81B13",25],["#FF4A3D",15],["#EEF0F2",10]],
+  white: [["#F2F3F5",60],["#D9DCE1",25],["#B9BEC6",15]],
+  clear: [["#DDE7FF",100]],
+  mix: [["#E1251B",20],["#1F4FE0",20],["#FFC21A",15],["#19B36B",15],["#EEF0F2",15],["#23262C",15]],
+  spectrum: [["#E1251B",17],["#FF6A1A",17],["#FFC21A",17],["#19B36B",17],["#1F4FE0",17],["#7A3CE0",15]]
+};
+function pick(pal, r){ let tot = pal.reduce((a,p)=>a+p[1],0), x = r()*tot; for (const p of pal){ if ((x -= p[1]) <= 0) return p[0]; } return pal[0][0]; }
+function pellet(ctx, x, y, s, col, rot, clear){
+  const rx = s, ry = s*.74;
+  ctx.save(); ctx.translate(x, y);
+  ctx.beginPath(); ctx.ellipse(s*.14, s*.26, rx, ry, rot, 0, Math.PI*2); ctx.fillStyle = "rgba(0,0,0,.45)"; ctx.fill();
+  ctx.rotate(rot);
+  ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI*2);
+  ctx.globalAlpha = clear ? .38 : 1; ctx.fillStyle = col; ctx.fill(); ctx.globalAlpha = 1;
+  const g = ctx.createRadialGradient(-rx*.3, -ry*.35, s*.05, 0, 0, s*1.08);
+  g.addColorStop(0, `rgba(255,255,255,${clear?.55:.32})`); g.addColorStop(.42, "rgba(255,255,255,0)"); g.addColorStop(1, `rgba(0,0,0,${clear?.2:.5})`);
+  ctx.fillStyle = g; ctx.fill();
+  if (clear){ ctx.lineWidth = Math.max(1, s*.06); ctx.strokeStyle = "rgba(255,255,255,.45)"; ctx.stroke(); }
+  ctx.beginPath(); ctx.ellipse(-rx*.34, -ry*.4, rx*.3, ry*.13, -.35, 0, Math.PI*2); ctx.fillStyle = `rgba(255,255,255,${clear?.85:.5})`; ctx.fill();
+  ctx.restore();
+}
+function sizeCanvas(c){ const d = Math.min(window.devicePixelRatio||1, 2), w = c.clientWidth, h = c.clientHeight; c.width = Math.round(w*d); c.height = Math.round(h*d); const ctx = c.getContext("2d"); ctx.setTransform(d,0,0,d,0,0); return {ctx, w, h}; }
+function bgGrad(ctx, w, h, a, b){ const g = ctx.createRadialGradient(w*.55, h*.4, 10, w*.5, h*.5, Math.max(w,h)*.8); g.addColorStop(0, a); g.addColorStop(1, b); ctx.fillStyle = g; ctx.fillRect(0,0,w,h); }
+function renderPellets(c, palette, seed, opts={}){
+  const {ctx, w, h} = sizeCanvas(c); if (!w || !h) return;
+  const r = rng(seed), pal = PAL[palette] || PAL.mix, clear = palette === "clear";
+  bgGrad(ctx, w, h, clear ? "#1A2232" : "#22252B", "#0A0B0D");
+  const base = opts.base || Math.max(10, Math.min(w, h) * .085);
+  const n = Math.round((w*h) / (base*base*1.7));
+  const items = [];
+  for (let i=0;i<n;i++){ const depth = r(); items.push({x:r()*w, y:r()*h, s: base*(.55+depth*.75), d:depth, col:pick(pal,r), rot:r()*Math.PI}); }
+  items.sort((a,b)=>a.d-b.d);
+  for (const p of items){ ctx.filter = p.d < .18 ? "blur(2px)" : "none"; pellet(ctx, p.x, p.y, p.s, opts.tint ? shade(opts.tint, (r()-.5)*.25) : p.col, p.rot, clear); }
+  ctx.filter = "none";
+  const v = ctx.createRadialGradient(w/2,h/2,Math.min(w,h)*.3,w/2,h/2,Math.max(w,h)*.75); v.addColorStop(0,"rgba(0,0,0,0)"); v.addColorStop(1,"rgba(0,0,0,.45)"); ctx.fillStyle = v; ctx.fillRect(0,0,w,h);
+}
+function renderPowder(c, seed){
+  const {ctx, w, h} = sizeCanvas(c); if (!w || !h) return;
+  const r = rng(seed); bgGrad(ctx, w, h, "#1C1F25", "#08090B");
+  const mounds = [["#1F4FE0", .3, .62], ["#E1251B", .66, .5], ["#FFC21A", .5, .8]];
+  const gauss = () => { let u=0,v=0; while(!u) u=r(); while(!v) v=r(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); };
+  mounds.forEach(([col, mx, my], k) => {
+    const cx = mx*w, cy = my*h, R = Math.min(w,h)*(k===2?.2:.27);
+    ctx.beginPath(); ctx.ellipse(cx, cy+R*.35, R*1.25, R*.28, 0, 0, Math.PI*2); ctx.fillStyle = "rgba(0,0,0,.5)"; ctx.fill();
+    const g = ctx.createRadialGradient(cx-R*.3, cy-R*.5, R*.1, cx, cy, R*1.1); g.addColorStop(0, shade(col,.25)); g.addColorStop(.6, col); g.addColorStop(1, shade(col,-.45));
+    ctx.beginPath(); ctx.moveTo(cx-R*1.2, cy+R*.35); ctx.quadraticCurveTo(cx-R*.5, cy-R*.15, cx, cy-R*.75); ctx.quadraticCurveTo(cx+R*.5, cy-R*.15, cx+R*1.2, cy+R*.35); ctx.ellipse(cx, cy+R*.35, R*1.2, R*.22, 0, 0, Math.PI); ctx.closePath(); ctx.fillStyle = g; ctx.fill();
+    for (let i=0;i<Math.round(R*16);i++){ const px = cx+gauss()*R*.62, py = cy+R*.1+gauss()*R*.38; ctx.fillStyle = r()<.5 ? shade(col,.35) : shade(col,-.3); ctx.globalAlpha = .22+r()*.3; ctx.fillRect(px, py, .6+r()*1.4, .6+r()*1.4); }
+    ctx.globalAlpha = 1;
+  });
+}
+function shade(hex, amt){ const n = parseInt(hex.slice(1),16); let rr=n>>16, gg=n>>8&255, bb=n&255; const t = amt<0?0:255, p = Math.abs(amt); rr=Math.round((t-rr)*p+rr); gg=Math.round((t-gg)*p+gg); bb=Math.round((t-bb)*p+bb); return `rgb(${rr},${gg},${bb})`; }
+
+/* Hero con capas y paralaje suave */
+const hero = document.getElementById("heroCanvas");
+const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+let layers = [];
+function buildHero(){
+  const d = Math.min(window.devicePixelRatio||1, 2), w = hero.clientWidth, h = hero.clientHeight; if (!w||!h) return;
+  hero.width = w*d; hero.height = h*d;
+  const r = rng(2024), base = Math.max(14, Math.min(w, 1400) * .024);
+  layers = [ {blur:3, k:.25, s:[.45,.7], n:1.1}, {blur:0, k:.6, s:[.8,1.15], n:.9}, {blur:2.5, k:1.2, s:[1.5,2.1], n:.08} ].map(L => {
+    const c = document.createElement("canvas"); c.width = (w+60)*d; c.height = (h+60)*d;
+    const x = c.getContext("2d"); x.setTransform(d,0,0,d,0,0); x.filter = L.blur ? `blur(${L.blur}px)` : "none";
+    const count = Math.round((w*h)/(base*base*6)*L.n);
+    for (let i=0;i<count;i++){ const px = (w+60)*(.18+.82*Math.pow(r(),.6)), py = (h+60)*r(); pellet(x, px, py, base*(L.s[0]+r()*(L.s[1]-L.s[0])), pick(PAL.hero,r), r()*Math.PI, false); }
+    return {c, k:L.k};
+  });
+  drawHero(0,0);
+}
+function drawHero(mx, my){
+  const ctx = hero.getContext("2d"), W = hero.width, H = hero.height, d = W / hero.clientWidth;
+  const g = ctx.createRadialGradient(W*.75, H*.35, 10, W*.7, H*.5, Math.max(W,H)*.8); g.addColorStop(0,"#1E2128"); g.addColorStop(1,"#0B0C0E"); ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+  layers.forEach(L => ctx.drawImage(L.c, (-30 + mx*L.k*14)*d, (-30 + my*L.k*14)*d));
+}
+let raf = 0;
+if (!reduce) document.querySelector(".hero").addEventListener("pointermove", e => {
+  const b = hero.getBoundingClientRect(), mx = (e.clientX-b.left)/b.width-.5, my = (e.clientY-b.top)/b.height-.5;
+  cancelAnimationFrame(raf); raf = requestAnimationFrame(() => drawHero(-mx, -my));
+});
+
+/* Igualación */
+const tone = document.getElementById("tone"), lab = document.getElementById("labCanvas");
+function setTone(hex){
+  hex = hex.toUpperCase(); tone.value = hex;
+  const n = parseInt(hex.slice(1),16);
+  document.getElementById("hex").textContent = hex;
+  document.getElementById("rgb").textContent = `RGB ${n>>16} · ${n>>8&255} · ${n&255}`;
+  renderPellets(lab, "mix", 5, {tint: hex});
+}
+tone.addEventListener("input", e => setTone(e.target.value));
+document.querySelectorAll(".presets button").forEach(b => b.addEventListener("click", () => setTone(b.dataset.c)));
+document.getElementById("matchBtn").addEventListener("click", () => { fProd.value = "Igualación de color"; fColor.value = `Referencia ${tone.value.toUpperCase()} (enviaré muestra física)`; goForm(); });
+
+function renderAll(){
+  buildHero();
+  document.querySelectorAll("canvas[data-render]").forEach(c => c.dataset.render === "powder" ? renderPowder(c, +c.dataset.seed) : renderPellets(c, c.dataset.palette, +c.dataset.seed));
+  setTone(tone.value);
+}
+let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderAll, 200); });
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(renderAll);
+renderAll();
+</script>
+</body>
+</html>
